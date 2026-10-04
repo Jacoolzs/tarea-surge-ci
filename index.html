@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integración Continua con GitHub Actions y Surge.sh</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --accent: #818cf8;
+      --success: #34d399;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      max-width: 650px;
+      width: 100%;
+      padding: 2.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(52, 211, 153, 0.15);
+      color: var(--success);
+      padding: 0.4rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+
+    .badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background-color: var(--success);
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 10px var(--success);
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .step-card {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .step-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+    }
+
+    .step-card h3 {
+      font-size: 0.95rem;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .step-card p {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    footer strong {
+      color: var(--text-main);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">Despliegue Continuo Activo</div>
+    <h1>CI/CD con GitHub Actions</h1>
+    <p class="subtitle">
+      Página web estática desplegada automáticamente en <strong>Surge.sh</strong> mediante integración continua al hacer push al repositorio de GitHub.
+    </p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <h3>1. Repositorio Git</h3>
+        <p>Código fuente versionado con Git y alojado en GitHub con rama principal <code>main</code>.</p>
+      </div>
+      <div class="step-card">
+        <h3>2. GitHub Actions</h3>
+        <p>Workflow automatizado que detecta cada push y ejecuta el pipeline de despliegue.</p>
+      </div>
+      <div class="step-card">
+        <h3>3. GitHub Secrets</h3>
+        <p>Token de autenticación protegido mediante <code>SURGE_TOKEN</code> sin exponer credenciales.</p>
+      </div>
+      <div class="step-card">
+        <h3>4. Surge.sh Hosting</h3>
+        <p>Servidor web estático rápido y seguro con soporte SSL automático.</p>
+      </div>
+    </div>
+
+    <footer>
+      Desarrollado para la práctica de <strong>Integración Continua</strong> &bull; &copy; 2026
+    </footer>
+  </div>
+</body>
+</html>
